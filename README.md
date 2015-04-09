@@ -1,4 +1,4 @@
-# ZulukuSAT
+# ZulukuSAT Solver
 An implementation of Walksat algorithm in Python 2.7.x
 
 # Considerations
@@ -11,8 +11,10 @@ An implementation of Walksat algorithm in Python 2.7.x
 
 - The main algorithm of solver is implemented in zulukusat.py file.
 
+- If you want to run a race you have to give x permissions to files: `race.py, limits.sh and zulukusat.py` 
+
 # Basic usage
 
-You can run ZulukuSAT solver with `$ python zulukusat.py <cnf_file>`
+You can run ZulukuSAT Solver with `$ python zulukusat.py <cnf_benchmark>`
 
-You can run a race with `$ python race.py benchmarks zulukusat.py`
+You can run a race with `$ python race.py benchmarks_folder zulukusat.py`

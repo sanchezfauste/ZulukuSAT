@@ -136,10 +136,8 @@ class Interpretation:
 
 class Walksat:
 
-    def __init__(self):
-        pass
-
-    def solve_problem(self, sat_problem, max_tries=1000, max_flips=1000, p=0.5):
+    @staticmethod
+    def solve_problem(sat_problem, max_tries=1000, max_flips=1000, p=0.5):
         interpretation = Interpretation(sat_problem)
         for t in xrange(max_tries):
             interpretation.set_random_interpretation()
@@ -158,8 +156,7 @@ if __name__ == '__main__':
         print "Use:", sys.argv[0], "<sat_problem.cnf>"
         sys.exit(1)
     sat_problem = SatProblem(sys.argv[1])
-    walksat = Walksat()
-    interpretation = walksat.solve_problem(sat_problem, max_flips=sat_problem.number_of_vars, max_tries=4000000)
+    interpretation = Walksat.solve_problem(sat_problem, max_flips=sat_problem.number_of_vars, max_tries=4000000)
     print "c ZulukuSAT Solver"
     if interpretation:
         print "s SATISFIABLE"
